@@ -11,7 +11,8 @@ export default async (req, res) => {
     if (!session) return res.status(401).end();
 
     /*
-       La requete vient elle d'un admin ? Ici j'utilise un tableau avec les id d'admin dedans mais on peut imaginer un appel à l'API Discord (via discordjs / erisjs)
+       La requete vient elle d'un admin ? Ici j'utilise un tableau avec les id d'admin dedans mais on peut imaginer un appel à l'API Discord 
+       (via discordjs / erisjs (https://github.com/abalabahaha/eris) )
     */
     if (!requestedServer.admins.includes(session.user.id))
       return res.status(403).end();
