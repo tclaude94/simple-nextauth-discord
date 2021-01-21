@@ -52,6 +52,38 @@ export default function Home() {
             <button onClick={() => signOut()}>Logout</button>
           </>
         )}
+        <div
+          style={{ margin: "75px", display: "flex", flexDirection: "column" }}
+        >
+          <a
+            href="/api/server/1"
+            target="_blank"
+            style={{ marginBottom: "5px" }}
+          >
+            Lien random sans infos dans la db temp dispo pour tous
+          </a>
+          <a
+            href="/api/server/1234"
+            target="_blank"
+            style={{ marginBottom: "5px" }}
+          >
+            Lien dispo pour tous
+          </a>
+          <a
+            href="/api/server/288659194737983489"
+            target="_blank"
+            style={{ marginBottom: "5px" }}
+          >
+            Lien uniquement pour toi (si pas connecté err 401)
+          </a>
+          <a
+            href="/api/server/2"
+            target="_blank"
+            style={{ marginBottom: "5px" }}
+          >
+            Lien pas dispo pour toi -&gt; 403 (si pas connecté err 401)
+          </a>
+        </div>
 
         {!guilds && !error && session && <p>Chargement ...</p>}
         {error && <p>{error.message} retry en cours ...</p>}
